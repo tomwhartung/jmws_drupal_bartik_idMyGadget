@@ -154,3 +154,51 @@ function bartik_idMyGadget_field__taxonomy_term_reference($variables) {
 
   return $output;
 }
+/**
+ * Check that we have the device detection object, and if not, display the best error message we can.
+ */
+
+function bartik_idMyGadget_page_alter() {
+  global $jmwsIdMyGadget;
+
+  print '<p>Hi from bartik_idMyGadget_page_alter.</p>';
+
+  if (isset($jmwsIdMyGadget) ) {
+    unset( $jmwsIdMyGadget->errorMessage );
+  }
+  else {
+    bartik_idMyGadget_check_idMyGadget_installation();
+  }
+
+  print '<p>$jmwsIdMyGadget->isEnabled(): ' . $jmwsIdMyGadget->isEnabled() . '</p>';
+
+  print '<p>Bye from bartik_idMyGadget_page_alter.</p>';
+}
+/**
+ * Check whether the IdMyGadget module is installed and enabled,
+ * If something is wrong, generate the most accurate error message possible
+ */
+function bartik_idMyGadget_check_idMyGadget_installation() {
+  global $jmwsIdMyGadget;
+
+  require_once( 'idMyGadget/JmwsIdMyGadgetModuleMissing.php' );
+  $jmwsIdMyGadget = new JmwsIdMyGadgetModuleMissing();
+  $jmwsIdMyGadget->errorMessage = IDMYGADGET_UNKNOWN_ERROR;
+
+  $rooted_module_file_name =  DRUPAL_ROOT . '/' . JmwsIdMyGadgetModuleMissing::IDMYGADGET_MODULE_FILE;
+
+  if ( file_exists($rooted_module_file_name) )  {
+    if ( module_exists('idMyGadget') ) {
+      $jmwsIdMyGadget->errorMessage = IDMYGADGET_UNKNOWN_ERROR;
+    }
+    else {
+      $jmwsIdMyGadget->errorMessage = IDMYGADGET_NOT_ACTIVE;
+    }
+  }
+  else {
+    $jmwsIdMyGadget->errorMessage = IDMYGADGET_NOT_INSTALLED;
+    // print '<p>It is NOT installed</p>';
+  }
+
+  drupal_set_message( t($jmwsIdMyGadget->errorMessage), 'error' );
+}
