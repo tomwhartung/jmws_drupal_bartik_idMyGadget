@@ -170,7 +170,8 @@ function bartik_idMyGadget_page_alter() {
     bartik_idMyGadget_check_idMyGadget_installation();
   }
 
-  print '<p>$jmwsIdMyGadget->isEnabled(): ' . $jmwsIdMyGadget->isEnabled() . '</p>';
+  $logoTitleDescription = $jmwsIdMyGadget->getLogoTitleDescriptionHtml();
+  print '<p>strlen($logoTitleDescription): ' . strlen($logoTitleDescription) . '</p>';
 
   print '<p>Bye from bartik_idMyGadget_page_alter.</p>';
 }
