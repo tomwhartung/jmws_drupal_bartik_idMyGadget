@@ -1,8 +1,11 @@
-
+;
+; Documentation is here:
+;   https://www.drupal.org/node/171205
+;
 name = Bartik_IdMyGadget
-description = A flexible, recolorable theme with many regions.
-package = Core
-version = VERSION
+description = Adding device detection to a flexible, recolorable theme with many regions.
+package = jmws
+version = 1.0
 core = 7.x
 
 stylesheets[all][] = css/layout.css
@@ -10,7 +13,10 @@ stylesheets[all][] = css/style.css
 stylesheets[all][] = css/colors.css
 stylesheets[print][] = css/print.css
 stylesheets[all][] = idMyGadget/idMyGadget.css
-
+;
+; Note: defining regions explicitly disables all default regions!
+; (This theme defines all default regions explicitly so they are all included.)
+;
 regions[header] = Header
 regions[help] = Help
 regions[page_top] = Page top
@@ -33,10 +39,3 @@ regions[footer_fourthcolumn] = Footer fourth column
 regions[footer] = Footer
 
 settings[shortcut_module_link] = 0
-
-
-; Information added by Drupal.org packaging script on 2015-08-19
-version = "7.39"
-project = "drupal"
-datestamp = "1440020197"
-
