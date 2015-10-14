@@ -1,6 +1,5 @@
 ;
-; Documentation is here:
-;   https://www.drupal.org/node/171205
+; Documentation is here: https://www.drupal.org/node/171205
 ;
 name = Bartik_IdMyGadget
 description = Adding device detection to a flexible, recolorable theme with many regions.
@@ -14,7 +13,7 @@ stylesheets[all][] = css/colors.css
 stylesheets[print][] = css/print.css
 stylesheets[all][] = idMyGadget/idMyGadget.css
 ;
-; Note: defining regions explicitly disables all default regions!
+; Note: defining even just one region explicitly disables all default regions!
 ; (This theme defines all default regions explicitly so they are all included.)
 ;
 regions[header] = Header
