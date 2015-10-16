@@ -161,19 +161,16 @@ function bartik_idMyGadget_field__taxonomy_term_reference($variables) {
 function bartik_idMyGadget_page_alter() {
   global $jmwsIdMyGadget;
 
-  print '<p>Hi from bartik_idMyGadget_page_alter.</p>';
-
   if (isset($jmwsIdMyGadget) ) {
     unset( $jmwsIdMyGadget->errorMessage );
   }
   else {
     bartik_idMyGadget_check_idMyGadget_installation();
   }
-
-  $logoTitleDescription = $jmwsIdMyGadget->getLogoNameTitleDescriptionHtml();
-  print '<p>strlen($logoTitleDescription): ' . strlen($logoTitleDescription) . '</p>';
-
-  print '<p>Bye from bartik_idMyGadget_page_alter.</p>';
+//  print '<p>Hi from bartik_idMyGadget_page_alter.</p>';
+//  $logoTitleDescription = $jmwsIdMyGadget->getLogoNameTitleDescriptionHtml();
+//  print '<p>strlen($logoTitleDescription): ' . strlen($logoTitleDescription) . '</p>';
+//  print '<p>Bye from bartik_idMyGadget_page_alter.</p>';
 }
 /**
  * Check whether the IdMyGadget module is installed and enabled,
