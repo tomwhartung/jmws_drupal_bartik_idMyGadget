@@ -145,6 +145,12 @@ global $jmwsIdMyGadget;
       </div> <!-- /#main-menu -->
     <?php endif; ?>
 
+      <div class="debug">
+         <p></p>
+         <p>$jmwsIdMyGadget->usingJQueryMobile: <?php echo $jmwsIdMyGadget->usingJQueryMobile ?></p>
+         <p></p>
+      </div><!-- .debug -->
+
     <?php if ($secondary_menu): ?>
       <div id="secondary-menu" class="navigation">
         <?php print theme('links__system_secondary_menu', array(
