@@ -86,9 +86,14 @@
  */
 global $jmwsIdMyGadget;
 ?>
-<div id="page-wrapper"><div id="page">
+<div id="page-wrapper" <?php echo $jmwsIdMyGadget->jqmDataRole['page'] ?>>
+ <div id="page">
 
-  <div id="header" class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>"><div class="section clearfix">
+  <header id="header"
+    class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>"
+    <?php echo $jmwsIdMyGadget->jqmDataRole['header'] . ' ' ?>
+    <?php echo $jmwsIdMyGadget->jqmDataThemeAttribute ?>>
+   <div class="section clearfix">
 
     <?php if ( isset($jmwsIdMyGadget) && $jmwsIdMyGadget->isEnabled() ) : ?>
       <?php echo $jmwsIdMyGadget->getLogoNameTitleDescriptionHtml($front_page) ?>
@@ -166,7 +171,8 @@ global $jmwsIdMyGadget;
       </div> <!-- /#secondary-menu -->
     <?php endif; ?>
 
-  </div></div> <!-- /.section, /#header -->
+  </div> <!-- /.section -->
+  </header> <!-- /#header -->
 
   <?php if ($messages): ?>
     <div id="messages"><div class="section clearfix">
@@ -253,4 +259,5 @@ global $jmwsIdMyGadget;
 
   </div></div> <!-- /.section, /#footer-wrapper -->
 
-</div></div> <!-- /#page, /#page-wrapper -->
+ </div> <!-- /#page -->
+</div> <!-- /#page-wrapper -->
