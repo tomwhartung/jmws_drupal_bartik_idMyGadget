@@ -198,7 +198,8 @@ global $jmwsIdMyGadget;
       </div></div> <!-- /.section, /#sidebar-first -->
     <?php endif; ?>
 
-    <div id="content" class="column"><div class="section">
+    <div id="content" class="column" <?php echo $jmwsIdMyGadget->jqmDataRole['content'] ?>>
+     <div class="section">
       <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
@@ -222,7 +223,8 @@ global $jmwsIdMyGadget;
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
 
-    </div></div> <!-- /.section, /#content -->
+     </div> <!-- /.section -->
+    </div> <!-- /#content -->
 
     <?php if ($page['sidebar_second']): ?>
       <div id="sidebar-second" class="column sidebar"><div class="section">
@@ -240,7 +242,9 @@ global $jmwsIdMyGadget;
     </div></div> <!-- /#triptych, /#triptych-wrapper -->
   <?php endif; ?>
 
-  <div id="footer-wrapper"><div class="section">
+  <footer id="footer-wrapper"
+    <?php echo $jmwsIdMyGadget->jqmDataRole['footer'] . ' ' . $jmwsIdMyGadget->jqmDataThemeAttribute ?>>
+   <div class="section">
 
     <?php if ($page['footer_firstcolumn'] || $page['footer_secondcolumn'] || $page['footer_thirdcolumn'] || $page['footer_fourthcolumn']): ?>
       <div id="footer-columns" class="clearfix">
@@ -257,7 +261,8 @@ global $jmwsIdMyGadget;
       </div> <!-- /#footer -->
     <?php endif; ?>
 
-  </div></div> <!-- /.section, /#footer-wrapper -->
+   </div> <!-- /.section -->
+  </footer> <!-- /#footer-wrapper -->
 
  </div> <!-- /#page -->
 </div> <!-- /#page-wrapper -->
