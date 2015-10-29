@@ -151,7 +151,7 @@ global $jmwsIdMyGadget;
     <?php endif; ?>
 
       <div class="debug">
-        <?php echo $jmwsIdMyGadget->getSanityCheckString() ?>
+        <?php // echo $jmwsIdMyGadget->getSanityCheckString() ?>
       </div><!-- .debug -->
 
     <?php if ($secondary_menu): ?>
