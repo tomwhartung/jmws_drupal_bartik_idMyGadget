@@ -93,6 +93,11 @@ global $jmwsIdMyGadget;
     class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>"
     <?php echo $jmwsIdMyGadget->jqmDataRole['header'] . ' ' ?>
     <?php echo $jmwsIdMyGadget->jqmDataThemeAttribute ?>>
+   <?php if( $jmwsIdMyGadget->phoneHeaderNavThisDevice ) : ?>
+     <nav data-role="navbar">
+       <?php print render($page['phone_header_nav']); ?>
+     </nav>
+   <?php endif; ?>
    <div class="section clearfix">
 
     <?php if ( isset($jmwsIdMyGadget) && $jmwsIdMyGadget->isEnabled() ) : ?>
@@ -262,6 +267,11 @@ global $jmwsIdMyGadget;
     <?php endif; ?>
 
    </div> <!-- /.section -->
+   <?php if( $jmwsIdMyGadget->phoneFooterNavThisDevice ) : ?>
+     <nav data-role="navbar" data-position="fixed">
+       <?php print render($page['phone_footer_nav']); ?>
+     </nav>
+   <?php endif; ?>
   </footer> <!-- /#footer-wrapper -->
 
  </div> <!-- /#page -->
